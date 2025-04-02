@@ -15,8 +15,7 @@ import 'package:loggy/loggy.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<List<Box>> _openBox() async {
-  final directory = await getApplicationDocumentsDirectory();
-  Hive.init(directory.path);
+  Hive.init('./');
   List<Box> boxList = [];
   await Hive.initFlutter();
   Hive.registerAdapter(UserDbAdapter());
